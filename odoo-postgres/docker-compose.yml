@@ -2,7 +2,6 @@ version: "3"
 services:
   db:
     image: postgres:11
-    # build: ./postgresql
     container_name: postgres
     environment:
       - POSTGRES_PASSWORD=odoo
@@ -11,7 +10,6 @@ services:
     restart: always
 
   odoo:
-    image: odoo:13
     build: ./odoo
     container_name: odoo
     depends_on:
